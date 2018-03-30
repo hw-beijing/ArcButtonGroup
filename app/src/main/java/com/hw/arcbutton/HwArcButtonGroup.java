@@ -65,7 +65,7 @@ public class HwArcButtonGroup extends RelativeLayout implements View.OnClickList
     private boolean openState = false;
 
 
-    private MPAddButtonItemClick mpAddButtonItemClick;
+    private HwArcButtonItemClick mpAddButtonItemClick;
 
     public HwArcButtonGroup(Context context) {
         super(context);
@@ -100,7 +100,7 @@ public class HwArcButtonGroup extends RelativeLayout implements View.OnClickList
                 if (view == views.get(i)) {
                     closeButtonAnimator();
                     if (mpAddButtonItemClick != null) {
-                        mpAddButtonItemClick.onAddButtonItemClick(view, i);
+                        mpAddButtonItemClick.onArcButtonItemClick(view, i);
                     }
                     return;
                 }
@@ -130,7 +130,7 @@ public class HwArcButtonGroup extends RelativeLayout implements View.OnClickList
         }
     }
 
-    public void setMpAddButtonItemClick(MPAddButtonItemClick mpAddButtonItemClick) {
+    public void setMpAddButtonItemClick(HwArcButtonItemClick mpAddButtonItemClick) {
         this.mpAddButtonItemClick = mpAddButtonItemClick;
     }
 
@@ -422,8 +422,8 @@ public class HwArcButtonGroup extends RelativeLayout implements View.OnClickList
         return valueAnimator;
     }
 
-    public static interface MPAddButtonItemClick {
-        public void onAddButtonItemClick(View v, int position);
+    public static interface HwArcButtonItemClick {
+        public void onArcButtonItemClick(View v, int position);
     }
 
     private final Handler handler = new Handler(Looper.getMainLooper()) {

@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * 作者：郝乐涛 on
  * 邮箱：364320703@qq.com
  */
-public class MainActivity extends Activity implements HwArcButtonGroup.MPAddButtonItemClick {
+public class MainActivity extends Activity implements HwArcButtonGroup.HwArcButtonItemClick {
 
     protected RelativeLayout rlMainRoot;
     private HwArcButtonGroup hwArcButtonGroup;
@@ -76,7 +76,7 @@ public class MainActivity extends Activity implements HwArcButtonGroup.MPAddButt
     }
 
     @Override
-    public void onAddButtonItemClick(View v, int position) {
+    public void onArcButtonItemClick(View v, int position) {
         Toast.makeText(getApplicationContext(),
                 "position :" + position +
                         " name:" + mpAddDataTypeBeans.get(position).getName(), Toast.LENGTH_LONG).show();
